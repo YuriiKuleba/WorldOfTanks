@@ -32,6 +32,9 @@ public class T0_TanksMoveForward extends JPanel
      */
     void moveForward()
     {
+        sleep(1000);
+        tankX += 64;
+        repaint();
         // TODO YOUR CODE HERE
     }
 
@@ -52,7 +55,7 @@ public class T0_TanksMoveForward extends JPanel
     {
         JFrame frame = new JFrame("MOVE TANK FORWARD");
         frame.setLocation(500, 150);
-        frame.setMinimumSize(new Dimension(BF_WIDTH + 22, BF_HEIGHT + 22));
+        frame.setMinimumSize(new Dimension(BF_WIDTH + 18, BF_HEIGHT + 40));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().add(this);
         frame.pack();

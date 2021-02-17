@@ -3,36 +3,91 @@ package com.luxoft.jva001p1.basics.part2.xtasks;
 import javax.swing.*;
 import java.awt.*;
 
-public class T3_TanksMove extends JPanel
-{
+public class T3_TanksMove extends JPanel {
     int tankX = 0;
     int tankY = 0;
 
-    void runTheGame()
-    {
+    void runTheGame() {
         move(2);
         move(2);
         move(3);
         move(3);
+        move(2);
         move(4);
+        move(5);
         move(4);
+        move(2);
         move(1);
         move(1);
+        move(4);
+        move(4);
 
         // TODO fill free to add more tests here
     }
 
     /**
      * One method call should smoothly move the tank one quadrant according to given direction.
-     *
+     * <p>
      * !!! Method should ignore wrong commands.
      * For expl: it should do nothing when tank at A0 and direction is 1-UP or 4 - LEFT
      *
      * @param direction can be 1 - up, 2 - right, 3 - down, 4 - left
      */
-    void move(int direction)
-    {
+    void move(int direction) {
+        switch (direction) {
+            case 1:
+                moveUp();
+                break;
+            case 2:
+                moveRight();
+                break;
+            case 3:
+                moveDown();
+                break;
+            case 4:
+                moveLeft();
+                break;
+            default:
+                System.out.println("Unknown command");
+        }
+
         // TODO YOUR CODE HERE
+    }
+
+    void moveRight () {
+        int k = 0;
+        while (k++ < 64) {
+            sleep(2);
+            tankX += 1;
+            repaint();
+        }
+    }
+
+    void moveLeft () {
+        int k = 0;
+        while (k++ < 64) {
+            sleep(2);
+            tankX -= 1;
+            repaint();
+        }
+    }
+
+    void moveUp () {
+        int k = 0;
+        while (k++ < 64) {
+            sleep(2);
+            tankY -= 1;
+            repaint();
+        }
+    }
+
+    void moveDown () {
+        int k = 0;
+        while (k++ < 64) {
+            sleep(2);
+            tankY += 1;
+            repaint();
+        }
     }
 
 
@@ -42,14 +97,12 @@ public class T3_TanksMove extends JPanel
     final int BF_WIDTH = 576;
     final int BF_HEIGHT = 576;
 
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
         T3_TanksMove bf = new T3_TanksMove();
         bf.runTheGame();
     }
 
-    public T3_TanksMove() throws Exception
-    {
+    public T3_TanksMove() throws Exception {
         JFrame frame = new JFrame("MOVE TANK FORWARD");
         frame.setLocation(500, 150);
         frame.setMinimumSize(new Dimension(BF_WIDTH, BF_HEIGHT + 22));
@@ -59,43 +112,32 @@ public class T3_TanksMove extends JPanel
         frame.setVisible(true);
     }
 
-    void sleep(int millis)
-    {
-        try
-        {
+    void sleep(int millis) {
+        try {
             Thread.sleep(millis);
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
 
         }
     }
 
     @Override
-    protected void paintComponent(Graphics g)
-    {
+    protected void paintComponent(Graphics g) {
         paintBF(g);
 
         g.setColor(new Color(255, 0, 0));
         g.fillRect(tankX, tankY, 64, 64);
     }
 
-    private void paintBF(Graphics g)
-    {
+    private void paintBF(Graphics g) {
         super.paintComponent(g);
 
         int i = 0;
         Color cc;
-        for (int v = 0; v < 9; v++)
-        {
-            for (int h = 0; h < 9; h++)
-            {
-                if (i % 2 == 0)
-                {
+        for (int v = 0; v < 9; v++) {
+            for (int h = 0; h < 9; h++) {
+                if (i % 2 == 0) {
                     cc = new Color(252, 241, 177);
-                }
-                else
-                {
+                } else {
                     cc = new Color(233, 243, 255);
                 }
                 i++;
