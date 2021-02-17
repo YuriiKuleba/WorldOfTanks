@@ -23,6 +23,9 @@ public class T0_Swap
     public static void swap(int[] data, int idx1, int idx2)
     {
         System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
         // TODO YOUR CODE HERE
     }
 }
