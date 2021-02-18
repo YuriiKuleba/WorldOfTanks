@@ -63,7 +63,14 @@ public class T3_TanksFire extends JPanel
      */
     void fire()
     {
+        tankPositionWithBullet();
+        moveTheBullet(tankDirection);
         // TODO YOUR CODE HERE
+    }
+
+    void tankPositionWithBullet() {
+        bulletX = tankX + 25;
+        bulletY = tankY + 20;
     }
 
     private void printCurrentBattleField()
@@ -79,9 +86,116 @@ public class T3_TanksFire extends JPanel
         return new int[] {x / 64, y / 64};
     }
 
-    void move(int direction)
-    {
+    void moveTheTank(int direction) {
         // TODO SHOULD BE ALREADY IMPLEMENTED
+        switch (direction) {
+            case 1:
+                moveUp();
+                break;
+            case 2:
+                moveRight();
+                break;
+            case 3:
+                moveDown();
+                break;
+            case 4:
+                moveLeft();
+                break;
+            default:
+                System.out.println("Unknown command");
+        }
+    }
+
+    void moveRight () {
+        int k = 0;
+        while (k++ < 64) {
+            sleep(2);
+            tankX += 1;
+            repaint();
+        }
+    }
+
+    void moveLeft () {
+        int k = 0;
+        while (k++ < 64) {
+            sleep(2);
+            tankX -= 1;
+            repaint();
+        }
+    }
+
+    void moveUp () {
+        int k = 0;
+        while (k++ < 64) {
+            sleep(2);
+            tankY -= 1;
+            repaint();
+        }
+    }
+
+    void moveDown () {
+        int k = 0;
+        while (k++ < 64) {
+            sleep(2);
+            tankY += 1;
+            repaint();
+        }
+    }
+
+    void moveTheBullet(int direction) {
+        // TODO SHOULD BE ALREADY IMPLEMENTED
+        switch (direction) {
+            case 1:
+                bulletUp();
+                break;
+            case 2:
+                bulletRight();
+                break;
+            case 3:
+                bulletDown();
+                break;
+            case 4:
+                bulletLeft();
+                break;
+            default:
+                System.out.println("Unknown command");
+        }
+    }
+
+    void bulletRight() {
+        int k = 0;
+        while (k++ < 576) {
+            sleep(2);
+            bulletX += 1;
+            repaint();
+        }
+    }
+
+    void bulletLeft () {
+        int k = 0;
+        while (k++ < 576) {
+            sleep(2);
+            bulletX -= 1;
+            repaint();
+        }
+    }
+
+    void bulletUp () {
+        int k = 0;
+        while (k++ < 576) {
+            sleep(5);
+            bulletY -= 1;
+            repaint();
+        }
+    }
+
+    void bulletDown () {
+        int k = 0;
+        while (k++ < 576) {
+            sleep(2);
+            bulletY += 1;
+            repaint();
+        }
     }
 
     void turn(int direction)
@@ -104,7 +218,7 @@ public class T3_TanksFire extends JPanel
     {
         JFrame frame = new JFrame("YOUR TANK SHOULD FIRE!!!");
         frame.setLocation(750, 150);
-        frame.setMinimumSize(new Dimension(BF_WIDTH, BF_HEIGHT + 22));
+        frame.setMinimumSize(new Dimension(BF_WIDTH + 17, BF_HEIGHT + 39));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().add(this);
         frame.pack();

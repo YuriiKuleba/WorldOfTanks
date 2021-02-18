@@ -20,6 +20,7 @@ public class T1_Sort {
         int[] copyToCheck = Arrays.copyOf(numbers, numbers.length);
 
         Arrays.sort(copyToCheck);
+
         System.out.println("Is numbers sorted: "
                 + String.valueOf(Arrays.equals(copyToCheck, copyToSort)).toUpperCase());
     }

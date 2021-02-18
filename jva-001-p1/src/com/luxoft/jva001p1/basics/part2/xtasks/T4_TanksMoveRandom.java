@@ -118,7 +118,7 @@ public class T4_TanksMoveRandom extends JPanel {
     public T4_TanksMoveRandom() throws Exception {
         JFrame frame = new JFrame("MOVE TANK FORWARD");
         frame.setLocation(500, 150);
-        frame.setMinimumSize(new Dimension(BF_WIDTH + 18, BF_HEIGHT + 38));
+        frame.setMinimumSize(new Dimension(BF_WIDTH + 18, BF_HEIGHT + 40));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().add(this);
         frame.pack();
