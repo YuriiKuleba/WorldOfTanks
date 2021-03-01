@@ -3,7 +3,6 @@ package com.luxoft.jva001p1.television;
 public class TV
 {
     private final int countOfChannels;
-
     private boolean isTurnedOn;
     private int channel;
 

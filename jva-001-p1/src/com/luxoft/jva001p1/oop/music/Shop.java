@@ -6,8 +6,7 @@ import com.luxoft.jva001p1.oop.music.domain.Transaction;
 
 import java.util.*;
 
-public class Shop
-{
+public class Shop {
     private Map<String, Customer> customers;
     private Map<String, Song> songs;
     private List<Transaction> transactions;
@@ -19,31 +18,26 @@ public class Shop
         this.transactions = new ArrayList<>();
     }
 
-    public void addSong(String name, double price)
+    public void addSong(String name , double price)
     {
-        songs.put(name, new Song(name, price));
+        songs.put(name , new Song(name , price));
     }
 
 
-    public void buy(String customerName, String ...songNames)
+    public void buy(String customerName , String... songNames)
     {
-        if (!customers.containsKey(customerName))
-        {
-            customers.put(customerName, new Customer(customerName));
+        if (!customers.containsKey(customerName)) {
+            customers.put(customerName , new Customer(customerName));
         }
 
         Customer customer = customers.get(customerName);
 
         List<Song> songsToBuy = new ArrayList<>();
 
-        for (String name : songNames)
-        {
-            if (!songs.containsKey(name))
-            {
+        for (String name : songNames) {
+            if (!songs.containsKey(name)) {
                 System.out.println("Sorry, choose another song!!!");
-            }
-            else
-            {
+            } else {
                 songsToBuy.add(copySong(songs.get(name)));
             }
         }
@@ -61,7 +55,7 @@ public class Shop
 
     private Song copySong(Song song)
     {
-        return new Song(song.getName(), song.getPrice());
+        return new Song(song.getName() , song.getPrice());
     }
 
     public void printPurchases()
@@ -70,8 +64,7 @@ public class Shop
         System.out.println("============ Purchases ==============");
         System.out.println();
 
-        for (Transaction transaction : transactions)
-        {
+        for (Transaction transaction : transactions) {
             System.out.println(transaction);
         }
 
@@ -85,8 +78,7 @@ public class Shop
     {
         System.out.println();
         System.out.println("==============================");
-        for (Song song : songs.values())
-        {
+        for (Song song : songs.values()) {
             System.out.println(song.getName() + ":" + song.getPrice());
         }
     }
