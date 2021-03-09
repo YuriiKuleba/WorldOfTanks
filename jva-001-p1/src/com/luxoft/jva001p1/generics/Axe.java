@@ -2,7 +2,7 @@ package com.luxoft.jva001p1.generics;
 
 public class Axe extends Product
 {
-    private double weight;
+    private final double weight;
 
     public Axe(long uid, double weight)
     {

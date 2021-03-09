@@ -1,8 +1,8 @@
-package triple;
+package hierarhy;
 
-public class Forest {
+public class Shape {
 
-    public Forest() {
+    public Shape() {
 
         System.out.println("Forest");
     }

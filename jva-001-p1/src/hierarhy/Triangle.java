@@ -1,8 +1,8 @@
-package triple;
+package hierarhy;
 
-public class Tree extends Forest{
+public class Triangle extends Shape {
 
-    public Tree() {
+    public Triangle() {
 
         System.out.println("Tree");
     }

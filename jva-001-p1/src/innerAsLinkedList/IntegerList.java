@@ -1,4 +1,4 @@
-package innerInteger;
+package innerAsLinkedList;
 
 public class IntegerList {
 

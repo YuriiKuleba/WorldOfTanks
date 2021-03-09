@@ -1,6 +1,4 @@
-package innerInteger;
-
-import com.luxoft.jva001p1.generics.c0list.Node;
+package innerAsLinkedList;
 
 public class IntLauncher {
 

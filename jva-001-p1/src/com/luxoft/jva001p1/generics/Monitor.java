@@ -2,7 +2,7 @@ package com.luxoft.jva001p1.generics;
 
 public class Monitor extends Product
 {
-    private int diagonal;
+    private final int diagonal;
 
     public Monitor(long uid, int diagonal)
     {
@@ -18,6 +18,6 @@ public class Monitor extends Product
     @Override
     public String toString()
     {
-        return getUid() +  ":Monitor [" + diagonal  + Character.toString((char) 698) + ", price: " + getPrice() + "$]";
+        return getUid() +  ":Monitor [" + diagonal  + (char) 698 + ", price: " + getPrice() + "$]";
     }
 }

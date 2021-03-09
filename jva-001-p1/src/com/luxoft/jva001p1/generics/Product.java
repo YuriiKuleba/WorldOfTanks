@@ -2,7 +2,7 @@ package com.luxoft.jva001p1.generics;
 
 public class Product
 {
-    private long uid;
+    private  final long uid;
     private double price;
 
 

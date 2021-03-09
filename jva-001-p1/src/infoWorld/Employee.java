@@ -1,11 +1,9 @@
 package infoWorld;
 
-import java.util.Objects;
 
 public class Employee extends Object {
 
-    private String name;
-
+    private final String name;
 
     public Employee(String name) {
         this.name = name;
